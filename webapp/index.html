@@ -35,6 +35,14 @@
 		.form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
 			color:    #FFF;
 		}
+		#nav-brand-text, #nav-agency {
+			border-bottom: 1px dashed #999;
+			display: inline;
+		}
+		#nav-agency:hover, #nav-agency:focus {
+			text-decoration: none;
+			color: #fff;
+		}
 	</style>
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -51,7 +59,7 @@
 				<span class="sr-only">Toggle navigation</span>
 				<span>Menu</span>
 			</button>
-			<a id="nav-brand" class="navbar-brand" data-toggle="modal" href="#modal-gafs">Meningitis Vaccine</a>
+			<a id="nav-brand" class="navbar-brand" data-toggle="modal" href="#modal-gafs"><span id="nav-brand-text">Meningitis Vaccine</span></a>
 		</div>
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
