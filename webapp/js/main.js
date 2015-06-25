@@ -3,17 +3,20 @@
 	 * @classDescription - Default settings for this application
 	 * @class - Default
 	 */
+	console.log(window.location.href);
 	var Default = {
 		// City
 		city:'Chicago',
 		// DOM ID of where the Google Map is to be rendered
 		domid:'map',
 		// Google Fusion Tables SQL-like query string for flu shot location data
-		eventquery:'SELECT * FROM 1leqPq9hrsGhnE8NoT00YZn1ITTzhK6BhrF8LNL4',
+		eventquery:'SELECT * FROM 197lGTyhgSC81kFzSepnGmQe2LIdEjM8zOvy8IuVq',
+		// USE THIS IN PRODUCTION
+		//eventquery:'SELECT * FROM 1lqlj9FuVNEoG2LuCvxg9lD8JdwSkc2KH1gncP2kW',
 		// Google Fusion Tables URI
 		fturl:'https://www.googleapis.com/fusiontables/v1/query',
 		// Google maps API key
-		googlemapsapikey:'AIzaSyDRVus9kkg8mr6M7EZUmXZsdoM7JSFbvC8',
+		googlemapsapikey:'AIzaSyClXyGQO7fpf6g-oW_ZvXgUxQ2hsoYTKVM',
 		// Icon for other for-fee events
 		iconfee:'/img/red.png',
 		// Icon for Free events
@@ -33,7 +36,7 @@
 			},
 			closeBoxMargin: "11px 4px 4px 4px",
 			closeBoxURL: "img/close_x.png",
-			infoBoxClearance: new google.maps.Size(25, 60),
+			infoBoxClearance: new google.maps.Size(30, 60),
 			visible: false,
 			pane: "floatPane",
 			enableEventPropagation: false
@@ -231,7 +234,6 @@
 								}
 								var maskedAddress = addarray.join(' ');
 								_gaq.push(['_trackEvent', 'Go Button', 'Address', maskedAddress]);
-								
 							}
 							else
 							{

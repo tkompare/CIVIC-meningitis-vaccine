@@ -20,8 +20,8 @@ var Flushots = (function($) {
 				$('#ical-'+Event.data.id).icalendar({
 					start: new Date(Date._parse(Event.data.begin_date+' '+Event.data.begin_time)),
 					end: new Date(Date._parse(Event.data.begin_date+' '+Event.data.end_time)),
-					title: 'Flu Shot Event',
-					summary: 'Flu Shot Event',
+					title: 'Meningitis Vaccine',
+					summary: 'Meningitis Vaccine',
 					description: "Please remember to bring your immunization/shot records with you.",
 					location: Event.data.facility_name+' - '+Event.data.street1+' - '+Event.data.city+' '+Event.data.state+' '+Event.data.postal_code,
 					iconSize: 16,
@@ -142,12 +142,12 @@ var Flushots = (function($) {
 			// Set CSS for the control interior.
 			var controlText = document.createElement('div');
 			controlText.style.fontFamily = '"Helvetica Neue",Helvetica,Arial,sans-serif';
-			controlText.style.fontSize = '12px';
+			controlText.style.fontSize = '13px';
 			controlText.style.color = '#fff';
-			controlText.style.paddingLeft = '.5em';
-			controlText.style.paddingRight = '.5em';
-			controlText.style.paddingTop = '.3em';
-			controlText.style.paddingBottom = '.3em';
+			controlText.style.paddingLeft = '.875em';
+			controlText.style.paddingRight = '.875em';
+			controlText.style.paddingTop = '.75em';
+			controlText.style.paddingBottom = '.75em';
 			controlText.innerHTML = 'Find Me';
 			controlUI.appendChild(controlText);
 			// Setup the click event listeners.

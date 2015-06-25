@@ -2,7 +2,7 @@
 <html lang=en>
 <head>
 	<meta charset=utf-8>
-	<title>Get A Flu Shot</title>
+	<title>Get the Meningitis Vaccine</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1" />
 	<link rel="icon" href="img/favicon.ico" type=”image/x-icon”>
@@ -10,7 +10,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
 	<style>
 		body { padding-bottom: 75px; }
 		.google-map-canvas,
@@ -19,6 +19,22 @@
 		.dropdown-menu { background-color:#333; }
 		.dropdown-menu > li > a { color:#aaa; }
 		.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {background-color:#fff; color:#333; text-decoration:none;}
+		input, textarea{
+			background-color:#666;
+			color: #FFF;
+		}
+		.form-control::-webkit-input-placeholder { /* WebKit browsers */
+			color:    #FFF;
+		}
+		.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color:    #FFF;
+		}
+		.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color:    #FFF;
+		}
+		.form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
+			color:    #FFF;
+		}
 	</style>
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -31,13 +47,11 @@
 	
 	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 		<div class="navbar-header">
-			<button id="navbar-button" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<button id="navbar-button" type="button" class="navbar-toggle btn btn-info" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="border-color:#666">
 				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+				<span>Menu</span>
 			</button>
-			<a id="nav-brand" class="navbar-brand" data-toggle="modal" href="#modal-gafs">Get A Flu Shot</a>
+			<a id="nav-brand" class="navbar-brand" data-toggle="modal" href="#modal-gafs">Meningitis Vaccine</a>
 		</div>
 		<div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav">
@@ -76,9 +90,9 @@
 			</ul>
 			<form class="navbar-form navbar-left" onSubmit="$('#nav-go').click(); return false;" role="search">
 				<div class="form-group">
-					<input id="nav-address" type="text" class="form-control input-sm" placeholder="Enter an address">
+					<input id="nav-address" type="text" class="form-control input-sm" placeholder="Enter an address" style="background-color:#222; color:#FFF;">
 				</div>
-				<button id="nav-go" class="btn btn-default btn-sm" type="button">Go</button>
+				<button id="nav-go" class="btn btn-default btn-sm" type="button" style="background:none; color:#ddd">Go</button>
 			</form>
 			<a id="nav-agency" class="navbar-text pull-right" data-toggle="modal" href="#modal-cdph"><small>Chicago Department of Public Health</small></a>
 		</div>
@@ -93,7 +107,7 @@
 					<h4 class="modal-title">Notes</h4>
 				</div>
 				<div class="modal-body">
-					<small>Built by <a href="http://about.me/tomkompare" target="_blank">Tom Kompare</a> in partnership with the <a href="http://www.cityofchicago.org/city/en/depts/cdph.html" target="_blank">Chicago Department of Public Health (CDPH)</a>. This was not developed by CDPH and CDPH makes no representations as to the accuracy of the information provided by this map application. This map application is hosted by the <a href="http://www.smartchicagocollaborative.org/" target="_blank">Smart Chicago Collaborative</a>. <a href="https://github.com/tkompare/flushots2013" target="_blank">The code behind this web application</a> is free, open, and under a <a href="https://github.com/tkompare/flushots2013/blob/master/LICENSE.TXT"target="_blank">MIT License</a>. Feel free to <a href="https://github.com/tkompare/flushots2013/issues" target="_blank">send me comments</a>.</small>
+					<small>Built by <a href="http://about.me/tomkompare" target="_blank">Tom Kompare</a> in partnership with the <a href="http://www.cityofchicago.org/city/en/depts/cdph.html" target="_blank">Chicago Department of Public Health (CDPH)</a>. This was not developed by CDPH and CDPH makes no representations as to the accuracy of the information provided by this map application. This map application is hosted by <a href="http://www.smartchicagocollaborative.org/" target="_blank">Smart Chicago</a>. <a href="https://github.com/tkompare/CIVIC-meningitis-vaccine" target="_blank">The code behind this web application</a> is free, open, and under a <a href="https://github.com/tkompare/flushots2013/blob/master/LICENSE.TXT"target="_blank">MIT License</a>. Feel free to <a href="https://github.com/tkompare/flushots2013/issues" target="_blank">send me comments</a>.</small>
 					<p><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button><br></p>
 				</div>
 			</div>
@@ -109,7 +123,7 @@
 					<h4 class="modal-title">Learn More</h4>
 				</div>
 				<div class="modal-body">
-					<small>Welcome to the flu shot finder. If your device has GPS, you may click on the <i>Find Me</i> button to see locations near you. You may enter your address and click on <i>Go</i> to do the same. Click on <i>All</i>, <i>Next 7 Days</i>, or <i>On A Day</i> of the week to highlight locations available on a certain day. Blue map locations offer free flu shots for anyone six months of age or older.<br><br><a href="http://www.cityofchicago.org/city/en/depts/cdph/provdrs/flu.html" target="_blank">Click here for more information about flu shots from the Chicago Department of Public Health.</a></small>
+					<small>Welcome to the meningitis vaccine finder. If your device has GPS, you may click on the <i>Find Me</i> button to see locations near you. You may enter your address and click on <i>Go</i> to do the same. Click on <i>All</i>, <i>Next 7 Days</i>, or <i>On A Day</i> of the week to highlight locations available on a certain day. Blue map locations offer free vaccines for anyone six months of age or older.<br><br><a href="http://www.cityofchicago.org/city/en/depts/cdph/provdrs/infect_dis/news/2015/June/cdph-and-cdc-expand-meningitis-vaccine-recommendation-amid-growi.html" target="_blank">Click here for more information about the meningitis from the Chicago Department of Public Health.</a></small>
 					<p><br><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button><br></p>
 				</div>
 			</div>
@@ -122,7 +136,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">No Cost Flu Shots</h4>
+					<h4 class="modal-title">No Cost Vaccine</h4>
 				</div>
 				<div class="modal-body">
 					<small>Locations marked with a blue icon are CDPH events. There is no cost to individual. If insured, insurance will be billed.</small>
@@ -137,10 +151,10 @@
 		window.jQuery
 			|| document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')
 	</script>
-	<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDRVus9kkg8mr6M7EZUmXZsdoM7JSFbvC8&sensor=true"></script>
-	<!-- All JS files below are included in 'main.min.js' file
+	<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyClXyGQO7fpf6g-oW_ZvXgUxQ2hsoYTKVM&sensor=true"></script>
+	<!-- All JS files below are included in 'main.min.js' file -->
 	<script src="js/jquery-migrate-1.2.1.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<script src="js/date.js"></script>
 	<script src="js/jquery.icalendar.js"></script>
 	<script src="js/infobox.js"></script>
@@ -149,21 +163,34 @@
 	<script src="js/event.js"></script>
 	<script src="js/flushots.js"></script>
 	<script src="js/main.js"></script>
--->
+<!--
 	<script src="js/main.min.js"></script>
+-->
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-42855450-2']);
+		_gaq.push(['_setAccount', 'UA-64460730-1']);
 		_gaq.push(['_trackPageview']);
-		// SCC Analytics
-		_gaq.push(['scc._setAccount', 'UA-37739534-17']);
-		_gaq.push(['scc._trackPageview']);
-	
+		// Smart Chicago Analytics
+		//_gaq.push(['scc._setAccount', 'UA-37739534-17']);
+		//_gaq.push(['scc._trackPageview']);
+
 		(function() {
 			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+<!--
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-64460730-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+-->
 </body>
 </html>
