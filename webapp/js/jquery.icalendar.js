@@ -457,6 +457,13 @@ function makeICalendar(event) {
 		(event.description ? limit75('DESCRIPTION:' + event.description) + '\n' : '') +
 		(event.location ? limit75('LOCATION:' + event.location) + '\n' : '') +
 		(event.recurrence ? makeRecurrence(event.recurrence) + '\n' : '') +
+		'BEGIN:VALARM\n' +
+		'TRIGGER:-PT2H\n' +
+		'REPEAT:1\n' +
+		'DURATION:PT15M\n' +
+		'ACTION:DISPLAY\n' +
+		'DESCRIPTION:Reminder\n' +
+		'END:VALARM\n' +
 		'END:VEVENT\n' +
 		'END:VCALENDAR';
 }
